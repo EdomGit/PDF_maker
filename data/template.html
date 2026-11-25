@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Счёт</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 10mm;
+  }
+  body {
+    font-family: "DejaVu Sans", "Arial", "Helvetica Neue", sans-serif;
+    font-size: 12pt;
+    color: #222;
+    margin: 0;
+    padding: 0 10mm;
+  }
+  h1 {
+    text-align: center;
+    font-size: 18pt;
+    margin: 0 0 20px;
+  }
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #444;
+    padding: 8px 10px;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 200px;
+  }
+  th {
+    background: #eee;
+    font-weight: bold;
+    text-align: center;
+  }
+  td.product {
+    text-align: left;
+    max-width: 280px;
+  }
+  td.qty,
+  td.price {
+    text-align: center;
+  }
+  col.col-name  { width: 50%; }
+  col.col-qty   { width: 25%; }
+  col.col-price { width: 25%; }
+  .total {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  .total span {
+    display: inline-block;
+    min-width: 120px;
+    border-bottom: 1px solid #444;
+    padding: 0 10px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<h1>Счёт №</h1>
+
+<table>
+  <colgroup>
+    <col class="col-name">
+    <col class="col-qty">
+    <col class="col-price">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Товар</th>
+      <th>Количество</th>
+      <th>Цена</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ROW_TEMPLATE_START -->
+    <tr>
+      <td class="product">{product}</td>
+      <td class="qty">{qty}</td>
+      <td class="price">{price}</td>
+    </tr>
+    <!-- ROW_TEMPLATE_END -->
+  </tbody>
+</table>
+
+<div class="total">Итого: <span>{itog}</span> ₽</div>
+
+</body>
+</html>
